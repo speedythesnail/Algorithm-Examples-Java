@@ -1,4 +1,4 @@
-/* (C) 2024 */
+/* (C) 2024 ShellTech.net, All Rights Reserved. */
 package net.shelltech.examples;
 
 /**

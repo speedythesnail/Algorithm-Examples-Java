@@ -12,7 +12,7 @@ spotless {
     palantirJavaFormat()
     formatAnnotations()  // fixes formatting of type annotations, see below
 
-    licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
+    licenseHeader '/* (C) $YEAR ShellTech.net, All Rights Reserved. */' // or licenseHeaderFile
   }
 
     groovy {
