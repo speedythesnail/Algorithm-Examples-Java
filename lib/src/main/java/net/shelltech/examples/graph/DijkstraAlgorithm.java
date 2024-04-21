@@ -3,15 +3,28 @@ package net.shelltech.examples.graph;
 
 import java.util.*;
 
+/**
+ * This class represents Dijkstra's Algorithm on a graph.
+ * The graph is represented as an adjacency list using a HashMap.
+ */
 public class DijkstraAlgorithm {
     // Graph represented as an adjacency list
     private HashMap<Integer, List<Integer>> graph;
 
+    /**
+     * Constructor for the DijkstraAlgorithm class.
+     * Initializes the graph as a new HashMap.
+     */
     public DijkstraAlgorithm() {
         this.graph = new HashMap<>();
     }
 
-    // Method to add an edge to the graph
+    /**
+     * Method to add an edge to the graph.
+     *
+     * @param node The node to which an edge should be added.
+     * @param neighbour The neighbour node that should be connected by the edge.
+     */
     public void addEdge(int node, int neighbour) {
         if (!graph.containsKey(node)) {
             graph.put(node, new ArrayList<>());
@@ -19,7 +32,14 @@ public class DijkstraAlgorithm {
         graph.get(node).add(neighbour);
     }
 
-    // Method to perform Dijkstra's Algorithm from a given source node
+    /**
+     * Method to perform Dijkstra's Algorithm from a given source node.
+     * It finds the shortest path from the source to all other vertices in the graph.
+     *
+     * @param graph The adjacency matrix representation of the graph.
+     * @param src The source node from where Dijkstra's Algorithm should start.
+     * @return An array of minimum distances from the source node to all other vertices.
+     */
     public int[] dijkstra(int[][] graph, int src) {
         int verticesCount = graph[0].length;
 
@@ -65,8 +85,15 @@ public class DijkstraAlgorithm {
         return dist;
     }
 
-    // A utility function to find the vertex with minimum distance value,
-    // from the set of vertices not yet included in shortest path tree
+    /**
+     * A utility function to find the vertex with minimum distance value,
+     * from the set of vertices not yet included in shortest path tree.
+     *
+     * @param dist The array of minimum distances from the source node.
+     * @param shortestPathTreeSet The boolean array to check if a vertex is included in shortest path tree.
+     * @param verticesCount The number of vertices in the graph.
+     * @return The index of the vertex with the minimum distance value.
+     */
     private static int getMinimumDistanceVertex(int[] dist, boolean[] shortestPathTreeSet, int verticesCount) {
         int min = Integer.MAX_VALUE;
         int minIndex = -1;

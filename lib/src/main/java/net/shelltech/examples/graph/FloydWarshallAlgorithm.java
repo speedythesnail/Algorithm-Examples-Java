@@ -1,9 +1,23 @@
 /* (C) 2024 ShellTech.net, All Rights Reserved. */
 package net.shelltech.examples.graph;
 
+/**
+ * This class represents Floyd Warshall Algorithm on a graph.
+ * The algorithm is used to find the shortest paths between all pairs of vertices in a graph.
+ */
 public class FloydWarshallAlgorithm {
-    static final int INF = 99999, V = 4;
+    // Maximum possible value, used as infinity
+    static final int INF = 99999;
+    // Number of vertices in the graph
+    static final int V = 4;
 
+    /**
+     * Method to perform Floyd Warshall Algorithm on a given graph.
+     * It finds the shortest paths between all pairs of vertices.
+     *
+     * @param graph The adjacency matrix representation of the graph.
+     * @return A 2D array of minimum distances between all pairs of vertices.
+     */
     public int[][] floydWarshall(int graph[][]) {
         int dist[][] = new int[V][V];
         int i, j, k;

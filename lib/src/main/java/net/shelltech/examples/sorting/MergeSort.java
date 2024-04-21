@@ -20,9 +20,16 @@ package net.shelltech.examples.sorting;
  *
  */
 public class MergeSort {
-    // Merges two subarrays of array[].
-    // First subarray is array[left..middle]
-    // Second subarray is array[middle+1..right]
+    /**
+     * Merges two subarrays of array[].
+     * First subarray is array[left..middle]
+     * Second subarray is array[middle+1..right]
+     *
+     * @param array The array to be sorted.
+     * @param left The starting index of the left subarray.
+     * @param middle The ending index of the left subarray and starting index of the right subarray.
+     * @param right The ending index of the right subarray.
+     */
     void merge(int[] array, int left, int middle, int right) {
         // Find sizes of two subarrays to be merged
         int leftArraySize = middle - left + 1;
@@ -70,7 +77,14 @@ public class MergeSort {
         }
     }
 
-    // Main function that sorts array[left..right] using merge()
+    /**
+     * Main function that sorts array[left..right] using merge()
+     * It divides the array into two halves, sorts them and then merges them.
+     *
+     * @param array The array to be sorted.
+     * @param left The starting index of the array to be sorted.
+     * @param right The ending index of the array to be sorted.
+     */
     void sort(int[] array, int left, int right) {
         if (left < right) {
             // Find the middle point

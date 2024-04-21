@@ -3,15 +3,28 @@ package net.shelltech.examples.graph;
 
 import java.util.*;
 
+/**
+ * This class represents a Depth-First Search (DFS) algorithm on a graph.
+ * The graph is represented as an adjacency list using a HashMap.
+ */
 public class DepthFirstSearch {
     // Graph represented as an adjacency list
     private HashMap<Integer, List<Integer>> graph;
 
+    /**
+     * Constructor for the DepthFirstSearch class.
+     * Initializes the graph as a new HashMap.
+     */
     public DepthFirstSearch() {
         this.graph = new HashMap<>();
     }
 
-    // Method to add an edge to the graph
+    /**
+     * Method to add an edge to the graph.
+     *
+     * @param node The node to which an edge should be added.
+     * @param neighbour The neighbour node that should be connected by the edge.
+     */
     public void addEdge(int node, int neighbour) {
         if (!graph.containsKey(node)) {
             graph.put(node, new ArrayList<>());
@@ -19,7 +32,12 @@ public class DepthFirstSearch {
         graph.get(node).add(neighbour);
     }
 
-    // Method to perform Depth-First Search from a given source node
+    /**
+     * Method to perform Depth-First Search from a given source node.
+     *
+     * @param source The source node from where DFS should start.
+     * @return A list of nodes in the order they were visited during the DFS.
+     */
     public List<Integer> depthFirstSearch(int source) {
         // Create a stack for DFS
         Stack<Integer> stack = new Stack<>();

@@ -6,11 +6,23 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-// Class for binary tree
+/**
+ * This class represents a binary tree.
+ * It provides methods for pre-order, in-order, post-order, and level-order tree traversal.
+ */
 class BinaryTree {
+    /**
+     * The root node of the binary tree.
+     */
     Node root;
 
-    // A method for the pre-order tree traversal
+    /**
+     * A method for the pre-order tree traversal.
+     * In this traversal method, the root node is visited first, then the left subtree, and finally the right subtree.
+     *
+     * @param node The root node of the tree to be traversed.
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> preOrder(Node node) {
         List<Integer> result = new ArrayList<>();
         if (node == null) return result;
@@ -27,12 +39,23 @@ class BinaryTree {
         return result;
     }
 
-    // A wrapper over the recursive preOrder(Node) method
+    /**
+     * A wrapper over the recursive preOrder(Node) method.
+     * This method initiates the pre-order traversal from the root of the tree.
+     *
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> preOrder() {
         return preOrder(root);
     }
 
-    // Method to perform post-order traversal
+    /**
+     * Method to perform post-order traversal.
+     * In this traversal method, the root node is visited last, after the left and right subtrees.
+     *
+     * @param node The root node of the tree to be traversed.
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> postOrderTraversal(Node node) {
         List<Integer> result = new ArrayList<>();
         if (node == null) {
@@ -51,7 +74,13 @@ class BinaryTree {
         return result;
     }
 
-    // A method for the in-order tree traversal
+    /**
+     * A method for the in-order tree traversal.
+     * In this traversal method, the root node is visited between the left and right subtrees.
+     *
+     * @param node The root node of the tree to be traversed.
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> inOrder(Node node) {
         List<Integer> result = new ArrayList<>();
         if (node == null) return result;
@@ -68,12 +97,22 @@ class BinaryTree {
         return result;
     }
 
-    // A wrapper over the recursive inOrder(Node) method
+    /**
+     * A wrapper over the recursive inOrder(Node) method.
+     * This method initiates the in-order traversal from the root of the tree.
+     *
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> inOrder() {
         return inOrder(root);
     }
 
-    // Method to perform level-order traversal
+    /**
+     * Method to perform level-order traversal.
+     * In this traversal method, all nodes at a given depth (or level) are visited before the nodes at the next depth.
+     *
+     * @return A list of nodes in the order they were visited.
+     */
     List<Integer> levelOrderTraversal() {
         List<Integer> result = new ArrayList<>();
         if (root == null) {

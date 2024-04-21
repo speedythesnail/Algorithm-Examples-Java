@@ -18,7 +18,13 @@ package net.shelltech.examples.sorting;
  *
  */
 public class BubbleSort {
-    // Method to perform Bubble Sort
+    /**
+     * Method to perform Bubble Sort on an array.
+     * It repeatedly steps through the array, compares adjacent elements and swaps them if they are in the wrong order.
+     * The pass through the array is repeated until the array is sorted.
+     *
+     * @param arrayToSort The array to be sorted.
+     */
     public void sort(int[] arrayToSort) {
         int arrayLength = arrayToSort.length;
 
