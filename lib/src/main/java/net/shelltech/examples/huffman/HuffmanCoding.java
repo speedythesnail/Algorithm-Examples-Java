@@ -30,6 +30,7 @@ public class HuffmanCoding {
      * @return a map of characters to their corresponding Huffman codes
      */
     public static Map<Character, String> buildHuffmanTree(char[] charArray, int[] charFreq) {
+        System.out.println("Building Huffman Tree...");
         PriorityQueue<HuffmanNode> queue = new PriorityQueue<>(new NodeComparator());
 
         // Create a node for each character and add it to the priority queue.
@@ -38,6 +39,7 @@ public class HuffmanCoding {
             node.data = charArray[i];
             node.frequency = charFreq[i];
             queue.add(node);
+            System.out.println("Added node for character: " + node.data + " with frequency: " + node.frequency);
         }
 
         // Build the Huffman tree by continually removing the two nodes
@@ -51,11 +53,16 @@ public class HuffmanCoding {
             sum.left = x;
             sum.right = y;
             queue.add(sum);
+            System.out.println(
+                    "Combined nodes " + x.data + " and " + y.data + " into new node with frequency: " + sum.frequency);
         }
 
         // Generate the Huffman codes
+        System.out.println("Generating Huffman codes...");
         Map<Character, String> huffmanCodes = new HashMap<>();
         generateCodes(queue.peek(), "", huffmanCodes);
+
+        System.out.println("Huffman codes generated successfully!");
 
         return huffmanCodes;
     }
@@ -70,6 +77,7 @@ public class HuffmanCoding {
     public static void generateCodes(HuffmanNode node, String code, Map<Character, String> huffmanCodes) {
         if (node.left == null && node.right == null) {
             huffmanCodes.put(node.data, code);
+            System.out.println("Generated code for character: " + node.data + " Code: " + code);
             return;
         }
 

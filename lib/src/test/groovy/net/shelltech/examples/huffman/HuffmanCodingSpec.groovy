@@ -13,12 +13,14 @@ class HuffmanCodingSpec extends Specification {
 		when:
 		Map<Character, String> huffmanCodes = HuffmanCoding.buildHuffmanTree(charArray, charFreq)
 
-		then:
-		huffmanCodes.get('a') != null
-		huffmanCodes.get('b') != null
-		huffmanCodes.get('c') != null
-		huffmanCodes.get('d') != null
-		huffmanCodes.get('e') != null
-		huffmanCodes.get('f') != null
+		then: 'the returned map contains the correct Huffman codes'
+		// Groovy is stupid so we have to do this to use
+		// a char as a key instead of a String
+		huffmanCodes['a' as char] == '1100'
+		huffmanCodes['b' as char] == '1101'
+		huffmanCodes['c' as char] == '100'
+		huffmanCodes['d' as char] == '101'
+		huffmanCodes['e' as char] == '111'
+		huffmanCodes['f' as char] == '0'
 	}
 }
