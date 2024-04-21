@@ -1,5 +1,5 @@
 /* (C) 2024 ShellTech.net, All Rights Reserved. */
-package net.shelltech.examples;
+package net.shelltech.examples.sorting;
 
 /**
  * Merge Sort is an efficient, stable sorting algorithm that works by dividing

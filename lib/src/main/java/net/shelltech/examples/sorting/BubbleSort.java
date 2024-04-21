@@ -1,5 +1,5 @@
 /* (C) 2024 ShellTech.net, All Rights Reserved. */
-package net.shelltech.examples;
+package net.shelltech.examples.sorting;
 
 /**
  * Bubble Sort is a simple sorting algorithm that repeatedly steps through
